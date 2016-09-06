@@ -1,0 +1,184 @@
+section.alum{
+
+    .nav-prev, .nav-next{
+        @include absolute-center;
+        background-color: transparent;
+        border: none;
+        left: calc(50% - 15rem);
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .nav-next{
+        .nav-prev, .nav-next{
+            display: none;
+        }
+    }
+
+    @include respond-to(767px) {
+        height: auto;
+    }
+
+    &:hover{
+        .nav-prev, .nav-next{
+            opacity: 1;
+        }
+    }
+
+    .alumni-wrapper{
+        overflow: hidden;
+        width: 100vw;
+        padding: 25px 0;
+        margin: -25px 0;
+    }
+
+    .alumni{
+        @include reset-list-style;
+        height: rem(300px);
+
+
+        @include respond-to(767px) {
+            height: rem(250px);
+        }
+
+        .person{
+            width: rem(250px);
+            height: rem(250px);
+            display: block;
+            background-color: black;
+            @include absolute-center;
+            z-index: 5;
+            overflow: hidden;
+            transition: left 0.5s, right 0.5s, width 0.5s, height 0.5s;
+
+            @include respond-to(767px) {
+                height: rem(250px);
+            }
+
+
+            .infos{
+                position: absolute;
+                bottom: 0;
+                z-index: 10;
+                color: white;
+                padding: rem(10px);
+                opacity: 0;
+                transition: opacity 0.5s;
+                width: 100%;
+                padding-top: 50px;
+                background-image: linear-gradient(-180deg, rgba(0,211,234,0.00) 0%, #006B9B 100%);
+
+                .name{
+                    @include rem-fontsize(27px);
+                    @include rem-lineheight(30px);
+                    margin: 0;
+                    font-weight: 300;
+                }
+
+                .detail{
+                    @include rem-fontsize(16px);
+                    @include rem-lineheight(16px);
+                    font-style: italic;
+                    font-weight: 300;
+                }
+            }
+
+            .quote{
+                background-color: rgba(#006B9B, 0.5);
+                @include absolute-center;
+                z-index: 9;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s;
+
+                blockquote{
+                    @include absolute-center;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    @include rem-fontsize(28px);
+                    @include rem-lineheight(30px);
+                    font-style: italic;
+                    font-weight: 200;
+
+                    &:before{
+                        content: "“";
+                        position: absolute;
+                        top: -50px;
+                        left: 0;
+                        @include rem-fontsize(121px);
+                        @include rem-lineheight(121px);
+                    }
+
+                    &:after{
+                        content: "”";
+                        position: absolute;
+                        bottom: -115px;
+                        right: 15px;
+                        @include rem-fontsize(121px);
+                        @include rem-lineheight(121px);
+                    }
+                }
+            }
+
+            .image{
+                @include absolute-center;
+                z-index: 5;
+                width: calc(100% + 25px);
+                height:calc(100% + 25px);
+                background-size: cover;
+                filter: blur(10px);
+                overflow: hidden;
+                transition: filter 0.5s;
+            }
+
+            &.is-active{
+                width: rem(350px);
+                height: rem(350px);
+                @include absolute-center;
+                z-index: 15;
+
+                @include respond-to(767px) {
+                    width: rem(300px);
+                    height: rem(300px);
+                }
+
+                .infos{
+                    opacity: 1;
+                }
+                .image{
+                    filter: blur(0);
+                }
+
+                &:hover{
+                    .quote{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @for $i from 1 to 10 {
+                $rem: (18.75 * $i);
+                $remm: (13.75 * $i);
+                $zindex: (11 - $i);
+                &.pos-bf-#{$i}{
+                    left: calc(50% - #{$rem}rem);
+                    z-index: $zindex;
+
+                    @include respond-to(767px) {
+                        left: calc(50% - #{$remm}rem);
+                    }
+                }
+                &.pos-af-#{$i}{
+                    left: calc(50% + #{$rem}rem);
+                    z-index: $zindex;
+
+                    @include respond-to(767px) {
+                        left: calc(50% + #{$remm}rem);
+                    }
+                }
+            }
+        }
+    }
+}

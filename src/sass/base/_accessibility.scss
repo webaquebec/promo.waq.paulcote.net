@@ -1,0 +1,33 @@
+// ------------------------------------- //
+//             Accessibility             //
+// ------------------------------------- //
+
+// Go to content link
+.skip-menu-link,
+.skip-content-link {
+    z-index: 100;
+    position: fixed;
+    top: 6px;
+    left: 6px;
+    background-color: $c-bg-document;
+    @include visuallyhidden;
+    // Reset style on focus
+    &:focus {
+        @include visuallyhidden(false);
+    }
+}
+
+// Disable default outline
+:focus {
+    outline: none;
+    // Custom outline color
+    [data-state="keyboard"] & {
+        box-shadow: 0 0 0 1px #fff, 0 0 0 3px #000, 0 0 0 4px #fff !important;
+    }
+}
+
+// Custom inline links outline color
+[data-state="keyboard"] p > a:focus {
+    text-decoration: none;
+    background-color: $c-bg-document;
+}

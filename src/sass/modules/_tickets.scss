@@ -1,0 +1,91 @@
+section.tickets{
+    background-image: url('../img/tickets-bg.png');
+    background-size: cover;
+    background-position: top center;
+    color: white;
+    padding: rem(60px) 0;
+
+
+    @include respond-to(767px) {
+        .grid>.grid-wrapper>.col-1-2{
+            width: calc(100% - 25px);
+        }
+    }
+
+    .price{
+        @include rem-fontsize(91px);
+        @include rem-lineheight(91px);
+        font-family: "Titillium Web";
+        text-align: center;
+    }
+
+    .type{
+        @include rem-fontsize(21px);
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .valid{
+        @include rem-fontsize(17px);
+        font-weight: 200;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .buy{
+        text-align: center;
+        margin-top: rem(25px);
+        margin-bottom: rem(25px);
+        .btn{
+            width: rem(175px);
+        }
+    }
+
+    .warning{
+        @include rem-fontsize(14px);
+        font-weight: 200;
+        font-style: italic;
+        text-align: center;
+        display: block;
+        max-width: rem(300px);
+        margin: 0 auto;
+    }
+
+
+    .title{
+        @include rem-fontsize(22px);
+        font-weight: 300;
+        margin-bottom: rem(30px);
+        @include respond-to(767px) {
+            text-align: center;
+        }
+    }
+
+    .includes{
+        @include reset-list-style;
+        text-align: center;
+        li{
+            margin-bottom: rem(30px);
+            display: inline-block;
+            @include rem-fontsize(18px);
+            @include rem-lineheight(20px);
+            font-weight: 200;
+            max-width: rem(300px);
+            padding-left: rem(75px);
+            position: relative;
+            text-align: left;
+            span{
+                display: block;
+                @include rem-lineheight(20px);
+            }
+            .icon-wrapper{
+                position: absolute;
+                fill: white;
+                img{
+                    position: relative;
+                    left: -125%;
+                }
+            }
+        }
+    }
+}

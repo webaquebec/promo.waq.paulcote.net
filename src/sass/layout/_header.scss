@@ -1,0 +1,104 @@
+// ------------------------------ //
+//             Header             //
+// ------------------------------ //
+
+header {
+    background-image: url('../img/header-bg.png');
+    background-size: cover;
+    background-position: top center;
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+
+    @include respond-to(767px) {
+        height: auto;
+        min-height: 0;
+        padding: rem(60px) 0;
+    }
+
+    .title{
+
+        @include respond-to((768px,9999px)) {
+            @include absolute-center;
+        }
+
+        .logo{
+            max-width: 90vw;
+            margin: 0 auto;
+        }
+
+        .tagline{
+            color: white;
+            max-width: 400px;
+            text-align: center;
+            @include rem-fontsize(22px);
+            @include respond-to(767px) {
+                @include rem-fontsize(16px);
+                padding: 0 rem(20px);
+            }
+        }
+
+        .buy{
+            width: 100%;
+            text-align: center;
+            margin-top: rem(10px);
+
+            @include respond-to(767px) {
+                margin: rem(40px) 0;
+            }
+        }
+    }
+
+    .infos{
+
+        @include respond-to((768px,9999px)) {
+            @include absolute-horizontal-center;
+            bottom: rem(30px);
+        }
+        @include respond-to(767px) {
+            text-align: center;
+            width: 100%;
+        }
+
+        .place,.date{
+            display: inline-block;
+            color: white;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: "Titillium Web";
+            padding-left: rem(50px);
+            position: relative;
+
+            @include respond-to(767px) {
+                display: block;
+                width: 65%;
+                margin: 0 auto;
+            }
+
+            span{
+                display: block;
+                @include rem-lineheight(20px);
+                text-align: left;
+            }
+            .icon-wrapper{
+                position: absolute;
+                fill: white;
+                svg{
+                    position: relative;
+                    left: -125%;
+                }
+            }
+
+        }
+
+        .place{
+            margin-right: rem(50px);
+
+            @include respond-to(767px) {
+                margin-right: 0;
+                margin: 0 auto;
+                margin-bottom: rem(10px);
+            }
+        }
+    }
+}

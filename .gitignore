@@ -1,0 +1,16 @@
+# OS Junk
+.DS_Store
+ThumbsDB
+completer.hist
+
+# Sass Junk
+.sass-cache
+
+# Node & Grunt Junk
+build
+node_modules
+bower_components
+
+# Logs & Cache
+*.log
+*.cache

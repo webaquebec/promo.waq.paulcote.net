@@ -1,0 +1,44 @@
+section.history{
+    padding: rem(40px) 0 rem(100px);
+    background-image: url('../img/history-bg.png');
+    background-repeat: repeat;
+    .description{
+        @include rem-fontsize(23px);
+        @include rem-lineheight(34px);
+        font-family: "Titillium Web";
+        font-weight: 300;
+        color: #474747;
+        text-align: center;
+        margin-bottom: rem(30px);
+        @include respond-to(767px) {
+            @include rem-fontsize(20px);
+            @include rem-lineheight(22px);
+        }
+    }
+
+    .years{
+        @include reset-list-style;
+        text-align: center;
+        li{
+            margin-left: 1%;
+            margin-bottom: 1%;
+            width: 15%;
+
+            @include respond-to(767px) {
+                width: 30%;
+
+                &:nth-child(4n){
+                    margin-left: 0;
+                }
+            }
+
+            &:first-child{
+                margin-left: 0;
+            }
+
+            .btn{
+                width: 100%;
+            }
+        }
+    }
+}

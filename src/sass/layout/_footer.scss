@@ -1,0 +1,64 @@
+// ------------------------------ //
+//             Footer             //
+// ------------------------------ //
+
+footer{
+    padding: rem(40px) 0 rem(40px);
+    background-image: url('../img/footer-bg.png');
+    background-repeat: repeat;
+    color: white;
+    @include rem-fontsize(14px);
+    font-weight: 200;
+    @include respond-to(767px) {
+        text-align: center;
+    }
+
+    a {
+        color: white;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+
+    .l-page-wrapper{
+        max-width: 650px;
+    }
+
+    .description{
+        text-align: center;
+        margin-top: rem(40px);
+        @include rem-fontsize(14px);
+        @include rem-lineheight(18px);
+    }
+
+    .socials{
+        position: absolute;
+        right: 0;
+        top: rem(-10px);
+        @include respond-to(767px) {
+            position: static;
+            display: block;
+            margin-top: rem(20px);
+        }
+    }
+
+    .social{
+        border-radius: 100%;
+        text-align: center;
+        color: #474747;
+        fill: #474747;
+        @include rem-lineheight(40px);
+        width: rem(40px);
+        height: rem(40px);
+        display: inline-block;
+        background-color: rgba(#FFFFFF, 1);
+        transition: background-color 0.5s;
+        margin-left: rem(5px);
+
+        &:hover{
+            background-color: rgba(#006B9B, 1);
+            color: white;
+            fill: white;
+        }
+    }
+}

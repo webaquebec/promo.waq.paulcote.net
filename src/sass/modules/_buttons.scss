@@ -1,0 +1,37 @@
+// ------------------------------- //
+//             Buttons             //
+// ------------------------------- //
+
+.btn-outline{
+    padding: rem(10px);
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    @include rem-fontsize(23px);
+    @include rem-lineheight(23px);
+    font-weight: 200;
+    position: relative;
+    background-color: rgba(#006B9B, 0);
+    transition: background-color 0.5s;
+
+    &:hover{
+        background-color: rgba(#FFFFFF, 1);
+        color: black;
+    }
+
+    &.is-big{
+        @include rem-fontsize(30px);
+        @include rem-lineheight(30px);
+    }
+
+    &.is-grey{
+        color: #474747;
+        border-color: #474747;
+
+        &:hover{
+            background-color: rgba(#006B9B, 1);
+            color: white;
+        }
+    }
+}

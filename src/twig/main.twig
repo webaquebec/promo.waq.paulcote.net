@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    {% if title is empty %}
+    <title>{{ get_project_name() }} - {{ get_project_version() }}</title>
+    {% else %}
+    <title>{{ title }}</title>
+    {% endif %}
+
+    <meta charset="UTF-8">
+
+    <meta name="description" content="{{ get_project_description() }}">
+    <meta name="dcterms.description" content="{{ get_project_description() }}" />
+    <meta name="keywords" content="{{ get_project_keywords() }}" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ get_project_name() }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="{{ get_project_url() }}" />
+    <meta property="og:description" content="{{ get_project_description() }}" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Stylesheets -->
+    {% stylesheet "/css/main.css" %}
+
+    <!-- Templates styles -->
+    {% if templates == true %}{% stylesheet "/templates/css/templates.css" %}{% endif %}
+
+    <!-- Modernizr & Detectizr -->
+    {% script "/js/vendor/modernizr.min.js" %}
+    {% script "/js/vendor/detectizr.min.js" %}
+
+    {% script "/js/vendor/bower/svg4everybody.js" %}
+
+    <!-- Google Font Fallback -->
+    <link rel="stylesheet" href="{{ get_webfonts_url() }}">
+
+</head>
+<body itemscope itemtype="http://schema.org/Event" vocab="http://schema.org/" typeof="Event">
+
+    <a href="#skip-menu-anchor" class="skip-menu-link">Passer au menu</a>
+    <a href="#skip-content-anchor" class="skip-content-link">Passer au contenu</a>
+
+    <!-- Header -->
+    {% if templates == true %}
+        {% include "../../templates/twig/partials/header.twig" %}
+    {% else %}
+        {% include "partials/header.twig" %}
+    {% endif %}
+
+    <!-- Content -->
+    {% block page %}{% endblock %}
+
+    <!-- Footer -->
+    {% if templates == true %}
+        {% include "../../templates/twig/partials/footer.twig" %}
+    {% else %}
+        {% include "partials/footer.twig" %}
+    {% endif %}
+
+    {# google-analytics "XX-XXXXXXXX-X" #}
+
+    <!-- Javascript -->
+
+    <!-- Project -->
+    {% script "/js/project.js" %}
+
+    <!-- Vendors -->
+    {% script "/js/vendor/bower/jquery.js" %}
+    {% script "/js/vendor/bower/underscore.js" %}
+    {% script "/js/vendor/bower/webfontloader.js" %}
+
+    <!-- jQuery dependencies -->
+    {% script "/js/vendor/bower/jquery.waitforimages.js" %}
+
+    <!-- Helpers -->
+    {% script "/js/helpers.js" %}
+
+    <!-- Modules -->
+    {# script "/js/vendor/bower/jquery.moduleName.js" #}
+
+    <!-- Main file -->
+    {% script "/js/main.js" %}
+
+    <!-- Templates -->
+    {% if templates == true %}{% script "/templates/js/templates.js" %}{% endif %}
+
+    <script>
+    WebFont.load({
+        google: {
+            families: {{ get_webfonts()|json_encode|raw }}
+        }
+    });
+    </script>
+
+</body>
+</html>

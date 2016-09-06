@@ -1,0 +1,61 @@
+section.newsletter{
+    padding: rem(70px) 0 rem(40px) ;
+    background-image: url('../img/newsletter-bg.png');
+    background-repeat: repeat;
+    color: #474747;
+
+    .title{
+        margin: 0;
+        @include rem-fontsize(23px);
+        @include rem-lineheight(25px);
+        text-align: center;
+    }
+    .subtitle{
+        @include rem-fontsize(21px);
+        @include rem-lineheight(22px);
+        text-align: center;
+        font-weight: 200;
+        display: block;
+    }
+
+    form{
+        margin: 0 auto;
+        margin-top: rem(20px);
+        max-width: 600px;
+        text-align: center;
+        input{
+            border: 1px solid #474747;
+            background-color: transparent;
+            padding: rem(10px);
+            @include rem-fontsize(23px);
+            @include rem-lineheight(25px);
+            font-weight: 100;
+
+            &[type=text],
+            &[type=email]{
+                width: 70%;
+                @include respond-to(767px) {
+                    width: 100%;
+                    direction: block;
+                    text-align: center;
+                    margin-bottom: rem(5px);
+                }
+            }
+            &[type=submit]{
+                width: 28%;
+                background-color: rgba(#006B9B, 0);
+                transition: background-color 0.5s;
+
+                @include respond-to(767px) {
+                    width: 100%;
+                    direction: block;
+                }
+
+                &:hover{
+                    background-color: rgba(#006B9B, 1);
+                    color: white;
+                }
+            }
+        }
+    }
+}
