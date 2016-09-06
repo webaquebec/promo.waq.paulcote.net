@@ -1,5 +1,5 @@
 module.exports = {
-    build: './build/',
+    build: './docs/',
     src: './src/',
     templates: './templates/',
     exportPath: './export/',
