@@ -51,6 +51,7 @@ section.alum{
             z-index: 5;
             overflow: hidden;
             transition: left 0.5s, right 0.5s, width 0.5s, height 0.5s;
+            transform: translate(-50%, -50%) translatez(0);
 
             @include respond-to(767px) {
                 width: rem(250px);
@@ -140,6 +141,7 @@ section.alum{
                 height: rem(350px);
                 @include absolute-center;
                 z-index: 15;
+                transform: translate(-50%, -50%) translatez(0);
 
                 @include respond-to(767px) {
                     width: rem(300px);

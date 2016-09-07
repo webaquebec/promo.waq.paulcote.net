@@ -34,6 +34,7 @@ section.newsletter{
             &[type=text],
             &[type=email]{
                 width: 70%;
+                border-radius: 0;
                 @include respond-to(767px) {
                     width: 100%;
                     direction: block;
@@ -45,6 +46,7 @@ section.newsletter{
                 width: 28%;
                 background-color: rgba(#006B9B, 0);
                 transition: background-color 0.5s;
+                border-radius: 0;
 
                 @include respond-to(767px) {
                     width: 100%;

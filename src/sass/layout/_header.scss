@@ -18,19 +18,28 @@ header {
 
     .title{
 
+
+        @include respond-to(767px) {
+            margin: 0 auto;
+        }
         @include respond-to((768px,9999px)) {
             @include absolute-center;
         }
 
         .logo{
-            max-width: 90vw;
+            max-width: 80vw;
             margin: 0 auto;
+            text-align: center;
+            @include respond-to(767px) {
+                margin-bottom: rem(10px);
+            }
         }
 
         .tagline{
             color: white;
             max-width: 400px;
             text-align: center;
+            margin: 0 auto;
             @include rem-fontsize(22px);
             @include respond-to(767px) {
                 @include rem-fontsize(16px);
@@ -71,7 +80,7 @@ header {
 
             @include respond-to(767px) {
                 display: block;
-                width: 65%;
+                width: rem(220px);
                 margin: 0 auto;
             }
 

@@ -74,6 +74,13 @@ section.tickets{
             padding-left: rem(75px);
             position: relative;
             text-align: left;
+
+            @include respond-to(767px) {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
             span{
                 display: block;
                 @include rem-lineheight(20px);
