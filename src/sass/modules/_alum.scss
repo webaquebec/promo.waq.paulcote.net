@@ -7,6 +7,12 @@ section.alum{
         left: calc(50% - 15rem);
         opacity: 0;
         transition: opacity 0.5s;
+        height: 70%;
+        width: 50px;
+        .icon-wrapper, svg{
+            height: 100%;
+            width: auto;
+        }
     }
 
     .nav-next{
@@ -15,8 +21,13 @@ section.alum{
 
     @include respond-to(767px) {
         height: auto;
-        .nav-prev, .nav-next{
-            display: none;
+
+        .nav-prev{
+            left: calc(50% - 12rem);
+        }
+
+        .nav-next{
+            left: calc(50% + 12rem);
         }
     }
 
@@ -97,7 +108,7 @@ section.alum{
 
                 blockquote{
                     @include absolute-center;
-                    width: 100%;
+                    width: 90%;
                     text-align: center;
                     color: white;
                     @include rem-fontsize(28px);
@@ -123,6 +134,22 @@ section.alum{
                         @include rem-lineheight(121px);
                     }
                 }
+
+                &.is-small{
+                    blockquote{
+                        @include rem-fontsize(20px);
+                        @include rem-lineheight(24px);
+                    }
+                    &:before{
+                        @include rem-fontsize(90px);
+                        @include rem-lineheight(90px);
+                    }
+
+                    &:after{
+                        @include rem-fontsize(90px);
+                        @include rem-lineheight(90px);
+                    }
+                }
             }
 
             .image{
@@ -131,9 +158,9 @@ section.alum{
                 width: calc(100% + 25px);
                 height:calc(100% + 25px);
                 background-size: cover;
-                filter: blur(10px);
+                //filter: blur(10px);
                 overflow: hidden;
-                transition: filter 0.5s;
+                //transition: filter 0.5s;
             }
 
             &.is-active{
@@ -152,7 +179,7 @@ section.alum{
                     opacity: 1;
                 }
                 .image{
-                    filter: blur(0);
+                    //filter: blur(0);
                 }
 
                 &:hover{
@@ -184,5 +211,11 @@ section.alum{
                 }
             }
         }
+    }
+}
+
+html.touch{
+    .nav-prev, .nav-next{
+        display: none;
     }
 }

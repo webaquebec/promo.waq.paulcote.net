@@ -15,7 +15,6 @@
     "svg4everybody": "^2.0.3",
     "webfontloader": "^1.6.24",
     "waitForImages": "^2.2.0",
-    "underscore": "^1.8.3",
-    "jquery-touchswipe": "~1.6.18"
+    "underscore": "^1.8.3"
   }
 }

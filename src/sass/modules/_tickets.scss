@@ -95,4 +95,76 @@ section.tickets{
             }
         }
     }
+
+    .hr{
+        display: block;
+        text-align: center;
+        margin: 20px 0;
+        position: relative;
+
+        &:before{
+            content: '';
+            display: block;
+            height: 1px;
+            background-color: white;
+            width: 50%;
+            left: -1rem;
+            margin-top: -1px;
+            @include absolute-vertical-center;
+        }
+
+        &:after{
+            content: '';
+            display: block;
+            height: 1px;
+            background-color: white;
+            width: 50%;
+            right: -1rem;
+            margin-top: -1px;
+            @include absolute-vertical-center;
+        }
+    }
+
+    .snqc{
+        .col{
+            text-align: center;
+        }
+        .logo{
+            max-width: 300px;
+            width: 100%;
+        }
+
+        .prices{
+            margin-top: 0;
+            .col{
+                vertical-align: middle;
+            }
+        }
+
+        .price{
+            @include rem-fontsize(60px);
+            @include rem-lineheight(60px);
+            font-family: "Titillium Web";
+            text-align: center;
+        }
+
+        .type{
+            @include rem-fontsize(18px);
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .valid{
+            @include rem-fontsize(14px);
+            font-weight: 200;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .buy{
+            .btn{
+                width: rem(200px);
+            }
+        }
+    }
 }

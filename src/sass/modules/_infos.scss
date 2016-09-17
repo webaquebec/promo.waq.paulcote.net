@@ -14,6 +14,16 @@ section.infos{
             @include rem-lineheight(22px);
         }
     }
+    .asterix{
+        @include rem-fontsize(14px);
+        @include rem-lineheight(16px);
+        font-family: "Titillium Web";
+        font-weight: 300;
+        color: #474747;
+        text-align: center;
+        font-style: italic;
+        padding-top: 20px;
+    }
 
     .numbers{
         @include reset-list-style;
