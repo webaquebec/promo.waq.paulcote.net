@@ -34,4 +34,14 @@
             color: white;
         }
     }
+
+    &.is-reverse{
+        background-color: rgba(#FFFFFF, 1);
+        color: black;
+
+        &:hover{
+            background-color: rgba(#006B9B, 0);
+            color: white;
+        }
+    }
 }
