@@ -18,6 +18,15 @@ section.tickets{
         @include rem-lineheight(91px);
         font-family: "Titillium Web";
         text-align: center;
+        position: relative;
+        .notice{
+            @include rem-fontsize(13px);
+            @include rem-lineheight(13px);
+            opacity: 0.8;
+            width: 17%;
+            position: absolute;
+            @include absolute-vertical-center;
+        }
     }
 
     .type{
