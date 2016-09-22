@@ -230,7 +230,7 @@ customFunctions.push({
     name: 'get_webfonts_url',
     func: function() {
         var fonts = styles !== undefined ? styles.fonts : [];
-        var url = 'http://fonts.googleapis.com/css?family=';
+        var url = '//fonts.googleapis.com/css?family=';
         for (var index in fonts) {
             var font = fonts[index];
             var webfont = (index > 0 ? '%7C' : '') + font.name.replace(' ', '+') + ':' + font.variants.join();
