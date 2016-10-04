@@ -1,0 +1,54 @@
+section.cfp{
+    background-color: #00AEC9;
+    background-image: url('../img/cfp-bg.jpg');
+    background-size: cover;
+    background-position: top center;
+    color: white;
+    padding: rem(60px) 0;
+
+
+    @include respond-to(767px) {
+        .grid>.grid-wrapper>.col-1-2{
+            width: calc(100% - 25px);
+        }
+    }
+
+    .col{
+        text-align: center;
+    }
+
+    .buy{
+        text-align: center;
+        margin-top: rem(25px);
+        margin-bottom: rem(25px);
+        .btn{
+            width: rem(175px);
+        }
+    }
+
+    .warning{
+        @include rem-fontsize(14px);
+        font-weight: 200;
+        font-style: italic;
+        text-align: center;
+        display: block;
+        max-width: rem(300px);
+        margin: 0 auto;
+        a{
+            color: white;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+
+    .title{
+        @include rem-fontsize(22px);
+        font-weight: 300;
+        margin-bottom: rem(30px);
+        @include respond-to(767px) {
+            text-align: center;
+        }
+    }
+}
